@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 'fabric-nps-rolling-pipeline',
     title: 'Fabric NPS Rolling Pipeline',
-    date: '2025',
+    date: 'Mar 2026',
     type: 'Data Engineering',
     tools: ['PySpark', 'Microsoft Fabric', 'Delta Lake', 'Dataflow Gen2', 'Graph API', 'OAuth2'],
     summary:
@@ -15,12 +15,13 @@ export const projects = [
       'Fail-fast row count validation before any SharePoint upload',
     ],
     repo: 'https://github.com/joacoferrer00/fabric-nps-rolling-pipeline',
+    image: null,
     featured: true,
   },
   {
     id: 'cx-interview-pipeline',
     title: 'CX Interview Ingestion Pipeline',
-    date: 'Dec 2025',
+    date: 'Feb 2026',
     type: 'Data Engineering',
     tools: ['Python', 'PySpark', 'Microsoft Fabric', 'Delta Lake', 'Elastic API'],
     summary:
@@ -32,6 +33,7 @@ export const projects = [
       'SQL endpoint exposed directly to Power BI — zero ODBC dependency',
     ],
     repo: 'https://github.com/joacoferrer00/cx_interview_ingestion_fabric_spark',
+    image: null,
     featured: true,
   },
   {
@@ -48,6 +50,7 @@ export const projects = [
       'DAX favorability measures with dynamic filtering by team, gender, age range',
     ],
     repo: 'https://github.com/joacoferrer00/CX_data_analyst_challenge',
+    image: null,
     featured: true,
   },
   {
@@ -64,6 +67,7 @@ export const projects = [
       'Identified systematic target overestimation: avg achievement 45–50%',
     ],
     repo: 'https://github.com/joacoferrer00/powerbi_sales_vs_targets',
+    image: null,
     featured: true,
   },
   {
@@ -80,6 +84,7 @@ export const projects = [
       'REMOVEFILTERS for persistent aggregations independent of slicer context',
     ],
     repo: 'https://github.com/joacoferrer00/sales_analysis_dashboard',
+    image: null,
     featured: false,
   },
   {
@@ -96,6 +101,7 @@ export const projects = [
       'Custom JSON theme + Photopea icons for professional UX',
     ],
     repo: 'https://github.com/joacoferrer00/Website_Performance_Dashboard',
+    image: null,
     featured: false,
   },
   {
@@ -112,6 +118,7 @@ export const projects = [
       'Q4 seasonality, geographic concentration, right-skewed order distribution',
     ],
     repo: 'https://github.com/joacoferrer00/ecommerce_sales_analysis',
+    image: null,
     featured: false,
   },
   {
@@ -128,6 +135,7 @@ export const projects = [
       'Shows who gains and loses under a fair points system',
     ],
     repo: 'https://github.com/joacoferrer00/f1_historical_performance_dashboard_powerbi',
+    image: null,
     featured: false,
   },
   {
@@ -144,6 +152,7 @@ export const projects = [
       'Strong correlation found between poles, wins, podiums, and points',
     ],
     repo: 'https://github.com/joacoferrer00/f1_data_analysis',
+    image: null,
     featured: false,
   },
 ]

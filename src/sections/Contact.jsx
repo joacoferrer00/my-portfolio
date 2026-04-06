@@ -11,7 +11,7 @@ const links = [
   },
   {
     label: 'Kaggle',
-    href: 'https://kaggle.com/joaquinferrer',
+    href: 'https://www.kaggle.com/joaqunferrer',
     description: 'Notebooks & datasets',
   },
   {
@@ -42,7 +42,7 @@ export default function Contact() {
               href={link.href}
               target={link.href.startsWith('mailto') ? undefined : '_blank'}
               rel="noopener noreferrer"
-              className="group bg-[#1a1d27] border border-[#2a2d3a] rounded-xl p-5 hover:border-[#3A7A5A]/50 hover:bg-[#1d2430] transition-all duration-200"
+              className="group bg-[#1a1d27] border-2 border-[#2a2d3a] rounded-xl p-5 hover:border-[#3A7A5A] hover:scale-[1.02] transition-all duration-300"
             >
               <p className="text-[#e2e8f0] font-semibold mb-1 group-hover:text-[#3A7A5A] transition-colors">
                 {link.label}

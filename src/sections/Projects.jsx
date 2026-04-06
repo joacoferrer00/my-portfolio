@@ -1,9 +1,13 @@
+import { useState } from 'react'
 import ProjectCard from '../components/ProjectCard'
 import { projects } from '../data/projects'
 
 export default function Projects() {
-  const featured = projects.filter((p) => p.featured)
-  const rest = projects.filter((p) => !p.featured)
+  const [openId, setOpenId] = useState(null)
+
+  function handleToggle(id) {
+    setOpenId((prev) => (prev === id ? null : id))
+  }
 
   return (
     <section id="projects" className="py-24 px-6 border-t border-[#2a2d3a]">
@@ -18,17 +22,14 @@ export default function Projects() {
           From production data pipelines to business dashboards — each project built to solve a real problem.
         </p>
 
-        {/* Featured */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
-          {featured.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-
-        {/* Rest */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {rest.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              expanded={openId === project.id}
+              onToggle={() => handleToggle(project.id)}
+            />
           ))}
         </div>
       </div>
