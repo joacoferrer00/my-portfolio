@@ -28,5 +28,5 @@ I work end-to-end across the data stack: connecting to source systems, modeling 
 
 ## CV
 
-- [English version (PDF)](https://drive.google.com)
-- [Spanish version (PDF)](https://drive.google.com)
+- [English version (PDF)](https://drive.google.com/file/d/1iH_FYZtkNhHINkNI65pICpwkOV25cLqi/view)
+

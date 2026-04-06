@@ -1,0 +1,133 @@
+{
+  "description": "Schema contract for the NPS rolling aggregation dataflow. Describes the source table columns consumed and the output Delta table columns produced.",
+  "source": {
+    "type": "fabric_data_warehouse",
+    "database": "lh_raw_surveys",
+    "schema": "dbo",
+    "table": "surveys_nps",
+    "columns": [
+      {
+        "name": "date",
+        "type": "datetime",
+        "note": "Timestamp of the survey interview. Used to compute ISO week and apply the rolling window filter."
+      },
+      {
+        "name": "scope",
+        "type": "text",
+        "source_values": ["POST-SALES", "SALES", "REPAIR"],
+        "note": "Customer touchpoint. Rows with any other scope value are filtered out."
+      },
+      {
+        "name": "region",
+        "type": "text",
+        "source_values": ["CHI", "EUR", "GC", "GOM", "ASEAN", "JNK", "MEA", "IAP", "SA"],
+        "note": "Source region codes; normalized to output codes by the dataflow."
+      },
+      {
+        "name": "market",
+        "type": "text",
+        "format": "ISO 3166-1 alpha-2",
+        "note": "Country code. Passed through unchanged; renamed to COUNTRY in output."
+      },
+      {
+        "name": "brand",
+        "type": "text",
+        "note": "Internal brand identifier. Characters at index 2–3 (0-based) contain the 2-char brand code used in output."
+      },
+      {
+        "name": "vehicle",
+        "type": "text",
+        "source_values": ["LCV", "PC"],
+        "note": "Vehicle segment. Values not in the allowed list are replaced with '-'."
+      },
+      {
+        "name": "engine",
+        "type": "text",
+        "source_values": ["BEV", "PHEV", "ICE"],
+        "note": "Powertrain type. Values not in the allowed list are replaced with '-'."
+      },
+      {
+        "name": "model",
+        "type": "text",
+        "note": "Commercial model name. Null, '#N/A', long part codes, or digit-starting codes are replaced with '-'."
+      },
+      {
+        "name": "nps_score",
+        "type": "integer",
+        "range": "0-10",
+        "note": "Raw NPS score. Used to derive the ANSWERS bucket. Rows with null score are excluded."
+      }
+    ]
+  },
+  "output": {
+    "type": "fabric_lakehouse_delta",
+    "table": "cx_nps_rolling_5w",
+    "composite_key": ["PERIOD", "ACTIVITY", "REGION", "COUNTRY", "BRAND", "VEHICLE", "ENGINE", "MODEL", "QID", "ANSWERS"],
+    "note": "No duplicate combinations of the composite key should exist in any daily export.",
+    "columns": [
+      {
+        "name": "PERIOD",
+        "type": "text",
+        "format": "YYYYWW",
+        "example": "202612",
+        "note": "ISO 8601 week identifier. WW is zero-padded. Year is determined by the ISO Thursday rule."
+      },
+      {
+        "name": "ACTIVITY",
+        "type": "text",
+        "values": ["NV", "PS", "RP"],
+        "note": "Touchpoint code: NV=Sales, PS=Post-Sales, RP=Repair."
+      },
+      {
+        "name": "REGION",
+        "type": "text",
+        "values": ["CHN", "EE", "ASEAN", "MEA", "IAP", "SA"],
+        "note": "Normalized region code."
+      },
+      {
+        "name": "COUNTRY",
+        "type": "text",
+        "format": "ISO 3166-1 alpha-2",
+        "example": "FR"
+      },
+      {
+        "name": "BRAND",
+        "type": "text",
+        "format": "2-character code",
+        "note": "Extracted from the source brand field (characters at index 2–3)."
+      },
+      {
+        "name": "VEHICLE",
+        "type": "text",
+        "values": ["LCV", "PC", "-"]
+      },
+      {
+        "name": "ENGINE",
+        "type": "text",
+        "values": ["BEV", "PHEV", "ICE", "-"]
+      },
+      {
+        "name": "MODEL",
+        "type": "text",
+        "note": "Uppercased commercial model name, or '-' for missing/invalid values."
+      },
+      {
+        "name": "QID",
+        "type": "text",
+        "fixed_value": "RECO",
+        "note": "This dataflow processes only the recommendation question."
+      },
+      {
+        "name": "ANSWERS",
+        "type": "text",
+        "values": [" 1-6", " 7-8", " 9-10"],
+        "note": "NPS score bucket. Each value has a leading space — required by the output specification."
+      },
+      {
+        "name": "SURVEYS",
+        "type": "integer",
+        "note": "Count of survey responses for this combination of dimensions. Not part of the composite key."
+      }
+    ]
+  }
+}

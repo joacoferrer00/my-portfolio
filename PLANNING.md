@@ -1,81 +1,108 @@
-# PLANNING.md — Portfolio Build Progress
+# PLANNING.md — Portfolio Roadmap
 
-## Project Structure
+## What we're building
+
+A single-page portfolio website. One long scrollable page, divided into sections. No separate pages, no routing, no login — just a clean, fast static site that loads instantly and works on any device.
+
+The site will present you as an Analytics Engineer, not a generic analyst. Every section should reinforce that positioning.
+
+---
+
+## Build phases
+
+### Phase 1 — Foundation (DONE)
+Git repo, Vite + React + Tailwind setup, all content files written, pushed to GitHub.
+No visual output yet — this is scaffolding only.
+
+### Phase 2 — Layout + first POC (DONE)
+Full page layout built, all 9 projects, all sections with real content. Reviewed and approved.
+
+### Phase 3 — Visual design ← WE ARE HERE
+Apply the full dark theme, green color palette, spacing, typography, and component styling.
+Add one screenshot image per project card where a good visual exists.
+After this phase the site looks like the real thing.
+
+### Phase 4 — Polish + interactions
+Hover states, scroll animations, mobile layout, performance check.
+Minor UX adjustments based on Phase 2 feedback.
+
+### Phase 5 — Deploy
+Push to Vercel or Netlify. Custom domain optional.
+
+---
+
+## Site sections (in order)
+
+| # | Section | What it contains |
+|---|---------|-----------------|
+| 1 | **Hero** | Your name, title ("Analytics Engineer"), one-line tagline, two buttons: View Projects + Download CV |
+| 2 | **About** | Short bio (3–4 sentences), your background, what you actually do |
+| 3 | **Projects** | Cards for each project — click to expand and see full detail |
+| 4 | **Skills** | Grouped by category: BI, SQL, Python, Data Engineering, Tools |
+| 5 | **Contact** | LinkedIn, GitHub, Kaggle, Email |
+
+---
+
+## Project order
+
+Most impactful and technical projects first. Personal or academic ones last.
+
+| Priority | Project | Why this position |
+|----------|---------|-------------------|
+| 1 | **Fabric NPS Rolling Pipeline** | Most complete engineering project. Production pipeline, OAuth2, Graph API, ISO logic, idempotency. |
+| 2 | **CX Interview Ingestion Pipeline** (Spark + Fabric) | Production-grade Lakehouse ETL. Directly targets Analytics Engineer roles. |
+| 3 | **CX Data Analyst Challenge** | End-to-end: modeling + automation + BI. Shows breadth in 48 hours. |
+| 4 | **Sales vs Targets Dashboard** | Strong data modeling (dual fact tables), ETL, real business problem. |
+| 5 | **Sales Analysis Dashboard** | Advanced DAX, custom fiscal calendar, replaced a real Excel process. |
+| 6 | **Website Performance Dashboard** | Good design, eliminated manual reporting, shows stakeholder-facing work. |
+| 7 | **E-Commerce Sales Analysis** | Clean Python EDA with real insights. Accessible to non-technical recruiters. |
+| 8 | **F1 Historical Performance** (Power BI) | Personal project. Interesting normalization angle, lower business relevance. |
+| 9 | **F1 Data Analysis** (Python + SQL) | Academic origin. Oldest project.
+
+---
+
+## Open decisions (your call)
+
+- **LinkedIn URL:** Your profile URL has a special character (í). Worth checking it resolves correctly.
+- **Tagline in Hero:** I'll draft a few options for you to choose from when we get there.
+
+---
+
+## Locked decisions
+
+- **All 9 projects stay** — no cuts (includes fabric-nps-rolling-pipeline added from GitHub)
+- **Project cards** — minimal: title, type badge, 2-line summary, tool tags, expandable details, GitHub link. No in-page modal or detail page — GitHub is the detail view.
+- **One image per project card** — a single screenshot where one exists (dashboards especially). Pipeline/engineering projects with no visual output: skip the image. Images sourced from `notion_portfolio/`, moved to `src/assets/projects/` before Phase 3.
+- **CV link** — already updated in `content/about.md`
+- **Contact section** — links only (LinkedIn, GitHub, Kaggle, Email). No form.
+
+---
+
+## File structure
+
 ```
 my_portfolio/
-├── public/
 ├── src/
-│   ├── components/       ← reusable UI (Navbar, ProjectCard, SkillBadge, etc.)
-│   ├── sections/         ← page sections (Hero, About, Projects, Skills, Contact)
-│   └── assets/
+│   ├── components/     ← small reusable pieces (buttons, cards, badges)
+│   ├── sections/       ← full sections (Hero.jsx, About.jsx, Projects.jsx...)
+│   └── assets/         ← images, icons
 ├── content/
 │   ├── about.md
 │   ├── skills.md
 │   └── projects/
-│       ├── cx-data-analyst-challenge.md
-│       ├── f1-data-analysis.md
-│       ├── ecommerce-sales-analysis.md
-│       ├── sales-vs-targets-dashboard.md
-│       ├── website-performance-dashboard.md
-│       ├── sales-analysis-dashboard.md
-│       ├── f1-historical-performance.md
-│       └── cx-interview-pipeline.md
-├── CLAUDE.md
-├── PLANNING.md
-├── README.md
-├── index.html
-├── vite.config.js
-└── package.json
+│       └── *.md        ← one file per project (8 total)
+├── CLAUDE.md           ← context for Claude (do not delete)
+├── PLANNING.md         ← this file
+└── README.md
 ```
 
 ---
 
-## Sections
+## Design decisions (already locked in)
 
-| Section   | Status         | Notes                                        |
-|-----------|----------------|----------------------------------------------|
-| Setup     | [x] Done       | Vite + React + Tailwind, git, content files  |
-| Hero      | [ ] Not started | Name, title, tagline, CTAs                  |
-| About     | [ ] Not started | Bio, background, contact links               |
-| Projects  | [ ] Not started | Cards + detail modal/expand                  |
-| Skills    | [ ] Not started | Grouped categories                           |
-| Contact   | [ ] Not started | Links to LinkedIn, GitHub, Kaggle, email     |
-| Deploy    | [ ] Not started | Vercel or Netlify                            |
-
----
-
-## Projects
-
-| Project | Type | Tools | Status |
-|---------|------|-------|--------|
-| CX Data Analyst Challenge | End-to-end BI | Power BI, Python, DAX | [ ] |
-| F1 Data Analysis | Data engineering + viz | Python, SQL, Power BI | [ ] |
-| E-Commerce Sales Analysis | EDA | Python, Pandas | [ ] |
-| Sales vs Targets Dashboard | Power BI | Power BI, DAX, ETL | [ ] |
-| Website Performance Dashboard | Power BI | Power BI, DAX, Google Analytics | [ ] |
-| Sales Analysis Dashboard | Power BI | Power BI, DAX, Galaxy schema | [ ] |
-| F1 Historical Performance (Power BI) | Personal viz | Power BI, DAX | [ ] |
-| CX Interview Ingestion Pipeline | Data engineering | Python, Spark, Microsoft Fabric, Delta Lake | [ ] |
-
----
-
-## Design Tokens (for reference)
-
-| Token | Value |
-|-------|-------|
-| Green primary | `#3A7A5A` |
-| Green dark | `#2F6B4F` |
-| Green darker | `#2A5E45` |
-| Background | `#0f1117` |
-| Surface | `#1a1d27` |
-| Text | `#e2e8f0` |
-| Text muted | `#94a3b8` |
-
----
-
-## Decisions Log
-
-- Language: English only
-- Repo visibility: Public
-- No backend, no CMS — content from local markdown files
-- No light mode
+- Dark theme only — no light mode
+- Green palette: `#3A7A5A` (primary), `#2F6B4F` (dark), `#2A5E45` (darker)
+- Background: near-black (`#0f1117`)
+- Animations: subtle only — hover states, smooth scrolling, maybe a fade-in on scroll
+- Font: system font or one clean sans-serif (no decorative fonts)
+- No backend, no database, no CMS
