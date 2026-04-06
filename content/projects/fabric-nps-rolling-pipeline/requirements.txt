@@ -1,5 +1,0 @@
-pandas>=2.0.0
-requests>=2.31.0
-
-# pyspark is provided by the Microsoft Fabric runtime — do not install separately
-# mssparkutils is available natively in Fabric notebooks

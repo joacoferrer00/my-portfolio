@@ -1,8 +1,0 @@
-.env
-config.py
-*.csv
-__pycache__/
-.ipynb_checkpoints/
-*.pyc
-.vscode/
-.claude/
