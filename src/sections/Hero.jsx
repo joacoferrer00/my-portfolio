@@ -1,4 +1,5 @@
 import cvPhoto from '../assets/cv.png'
+import { smoothScrollTo } from '../utils/scroll'
 
 export default function Hero() {
   return (
@@ -20,12 +21,12 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a
-              href="#projects"
+            <button
+              onClick={() => smoothScrollTo('projects')}
               className="px-6 py-3 bg-[#3A7A5A] hover:bg-[#2F6B4F] text-white font-medium rounded-lg transition-colors duration-200"
             >
               View Projects
-            </a>
+            </button>
             <a
               href="https://drive.google.com/file/d/1iH_FYZtkNhHINkNI65pICpwkOV25cLqi/view"
               target="_blank"

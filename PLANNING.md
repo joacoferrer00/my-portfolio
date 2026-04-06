@@ -21,13 +21,13 @@ Full dark theme, green palette, spacing, typography, component styling applied.
 Project hierarchy, card interactions, navbar active states, smooth scroll — all done.
 No project images — skipped by decision.
 
-### Phase 4 — Polish + interactions ← WE ARE HERE
-- Scroll animations (fade-in on section enter)
-- Mobile layout review and fixes
-- Performance check
-- Minor UX adjustments
+### Phase 4 — Polish + interactions (DONE)
+- Scroll animations: IntersectionObserver fade-in from bottom on all sections
+- Mobile layout: hamburger menu for small screens
+- Performance: profile photo compressed 2.2 MB → 581 KB
+- UX: smooth scroll shared utility, View Projects button fixed, Email card copies to clipboard
 
-### Phase 5 — Deploy
+### Phase 5 — Deploy ← WE ARE HERE
 Push to Vercel or Netlify. Custom domain optional.
 
 ---

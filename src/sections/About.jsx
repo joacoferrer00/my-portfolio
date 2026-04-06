@@ -1,7 +1,18 @@
+import { useInView } from '../hooks/useInView'
+
 export default function About() {
+  const [ref, inView] = useInView()
   return (
     <section id="about" className="py-24 px-6 border-t border-[#2a2d3a]">
-      <div className="max-w-5xl mx-auto">
+      <div
+        ref={ref}
+        className="max-w-5xl mx-auto"
+        style={{
+          opacity: inView ? 1 : 0,
+          transform: inView ? 'translateY(0)' : 'translateY(60px)',
+          transition: 'opacity 0.7s ease-out, transform 0.7s ease-out',
+        }}
+      >
         <p className="text-[#3A7A5A] text-sm font-medium tracking-widest uppercase mb-4">
           About
         </p>
