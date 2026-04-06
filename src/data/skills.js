@@ -1,12 +1,13 @@
 export const skillGroups = [
   {
-    category: 'Business Intelligence',
+    category: 'Data Engineering & Systems',
     skills: [
-      { name: 'Power BI', level: 'Advanced' },
-      { name: 'DAX', level: 'Advanced' },
-      { name: 'Power Query (M)', level: 'Advanced' },
-      { name: 'Data Modeling', level: 'Advanced' },
-      { name: 'Dashboard Design', level: 'Advanced' },
+      { name: 'Apache Spark / PySpark', level: 'Advanced' },
+      { name: 'Microsoft Fabric', level: 'Advanced' },
+      { name: 'Delta Lake', level: 'Advanced' },
+      { name: 'Lakehouse Architecture', level: 'Intermediate' },
+      { name: 'REST API Ingestion', level: 'Intermediate' },
+      { name: 'Pipeline Design', level: 'Advanced' },
     ],
   },
   {
@@ -15,28 +16,25 @@ export const skillGroups = [
       { name: 'SQL', level: 'Advanced' },
       { name: 'Star & Galaxy Schemas', level: 'Advanced' },
       { name: 'Dimensional Modeling', level: 'Advanced' },
-      { name: 'Query Optimization', level: 'Intermediate' },
+      { name: 'Query Optimization', level: 'Advanced' },
     ],
   },
   {
-    category: 'Python & Analytics',
+    category: 'Python & Automation',
     skills: [
-      { name: 'Python', level: 'Intermediate' },
-      { name: 'Pandas', level: 'Intermediate' },
-      { name: 'Matplotlib / Seaborn', level: 'Intermediate' },
-      { name: 'Automation & Scheduling', level: 'Intermediate' },
-      { name: 'Exploratory Data Analysis', level: 'Intermediate' },
+      { name: 'Python', level: 'Advanced' },
+      { name: 'Automation & Scheduling', level: 'Advanced' },
+      { name: 'Pandas', level: 'Advanced' },
+      { name: 'Exploratory Data Analysis', level: 'Advanced' },
     ],
   },
   {
-    category: 'Data Engineering',
+    category: 'Business Intelligence',
     skills: [
-      { name: 'Apache Spark / PySpark', level: 'Intermediate' },
-      { name: 'Microsoft Fabric', level: 'Intermediate' },
-      { name: 'Delta Lake', level: 'Intermediate' },
-      { name: 'Lakehouse Architecture', level: 'Intermediate' },
-      { name: 'REST API Ingestion', level: 'Intermediate' },
-      { name: 'Parquet / Delta Storage', level: 'Intermediate' },
+      { name: 'Power BI', level: 'Advanced' },
+      { name: 'DAX', level: 'Advanced' },
+      { name: 'Power Query (M)', level: 'Advanced' },
+      { name: 'Dashboard Design', level: 'Advanced' },
     ],
   },
   {
@@ -44,8 +42,7 @@ export const skillGroups = [
     skills: [
       { name: 'Git / GitHub', level: 'Intermediate' },
       { name: 'Power Automate', level: 'Intermediate' },
-      { name: 'Microsoft Fabric / Power Platform', level: 'Intermediate' },
-      { name: 'Notion', level: 'Proficient' },
+      { name: 'Microsoft Power Platform', level: 'Advanced' },
     ],
   },
 ]

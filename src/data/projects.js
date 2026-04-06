@@ -6,7 +6,7 @@ export const projects = [
     type: 'Data Engineering',
     tools: ['PySpark', 'Microsoft Fabric', 'Delta Lake', 'Dataflow Gen2', 'Graph API', 'OAuth2'],
     summary:
-      'Production pipeline automating the daily export of a 5-week rolling NPS aggregation to SharePoint. Replaced a manual weekly extraction with an idempotent, auditable daily job across 10 business dimensions.',
+      'Eliminated a weekly manual extraction. NPS data is now aggregated daily across 10 business dimensions and delivered automatically to SharePoint — auditable, idempotent, and zero-touch.',
     highlights: [
       'Three-layer architecture: Data Warehouse → Dataflow Gen2 → PySpark export notebook',
       'ISO 8601 Thursday rule and Monday-branching logic for exact 5-week rolling windows',
@@ -25,7 +25,7 @@ export const projects = [
     type: 'Data Engineering',
     tools: ['Python', 'PySpark', 'Microsoft Fabric', 'Delta Lake', 'Elastic API'],
     summary:
-      'Production-grade ETL pipeline replacing a fragile Power BI → Elastic ODBC connection. Three-layer Lakehouse architecture on Microsoft Fabric. Reduced refresh times by 50% and fully decoupled ingestion from reporting.',
+      'Replaced a fragile Power BI → Elasticsearch ODBC connection that broke regularly. A three-layer Lakehouse on Fabric now handles ingestion, transformation, and delivery — reports refresh reliably at 50% faster load times.',
     highlights: [
       'Spark notebooks ingesting Elastic API with 10k-record pagination',
       'Three-layer architecture: Raw Parquet → Staging → Delta Lake curated tables',
@@ -43,7 +43,7 @@ export const projects = [
     type: 'End-to-End Analytics',
     tools: ['Power BI', 'Python', 'DAX', 'SQL', 'SMTP'],
     summary:
-      'Four independent analytics problems solved end-to-end in 48 hours: a training completion dashboard, a forms tracker, a Python birthday notifier with daily email automation, and an eNPS analysis.',
+      'Four analytics problems, one 48-hour window. Delivered a training dashboard, a forms tracker, a Python birthday automation with zero manual trigger, and an eNPS analysis — each built on a proper star schema.',
     highlights: [
       'Star schema data models for all Power BI cases',
       'Python automation: daily scheduled email script with zero manual trigger',
@@ -60,7 +60,7 @@ export const projects = [
     type: 'Power BI — ETL + Dashboard',
     tools: ['Power BI', 'DAX', 'Power Query'],
     summary:
-      'Full ETL pipeline and Power BI dashboard comparing actual sales against targets at monthly and daily granularity. Dual independent fact tables with shared dimensions — the correct pattern for this type of comparison.',
+      'The business was comparing actuals vs targets in Excel. Replaced it with a dual-fact-table Power BI model at monthly and daily granularity — and surfaced that targets were systematically overestimated by 50–55%.',
     highlights: [
       'Dual fact table star schema: FACT_VENTAS + FACT_OBJETIVOS fully independent',
       'Side-by-side monthly/daily comparison with dynamic slicers',
@@ -94,7 +94,7 @@ export const projects = [
     type: 'Power BI — Marketing Analytics',
     tools: ['Power BI', 'DAX', 'Google Analytics'],
     summary:
-      'Marketing dashboard tracking product page visits vs. catalog download conversions. Eliminated manual monthly reporting and drove self-service adoption across a non-technical team.',
+      'Eliminated manual monthly reporting. Tracks product page visits vs. catalog download conversions, drove self-service adoption across a non-technical team.',
     highlights: [
       'Automated ingestion from Google Analytics CSV exports via Power Query',
       'Bookmark-based navigation mimicking a multi-page app',
@@ -111,7 +111,7 @@ export const projects = [
     type: 'Exploratory Data Analysis',
     tools: ['Python', 'Pandas', 'Matplotlib', 'Seaborn'],
     summary:
-      'EDA on 541,909 UK e-commerce transactions (2010–2011). Identified wholesale business model patterns, Q4 seasonality dependency, and product concentration risk.',
+      'EDA on 541,909 UK e-commerce transactions. Identified wholesale business model patterns, Q4 seasonality dependency, and product concentration risk.',
     highlights: [
       '541k rows: cleaning, deduplication, derived metrics',
       'KPIs: £9.7M revenue, £376 avg order value, 199 avg units/order',
@@ -128,7 +128,7 @@ export const projects = [
     type: 'Power BI — Personal Project',
     tools: ['Power BI', 'DAX'],
     summary:
-      'Cross-era F1 driver comparison using a normalized points system. Raw totals are misleading across decades — this dashboard adjusts for historical rule changes to enable fair comparisons.',
+      'Cross-era F1 driver comparison using a normalized points system to enable fair comparisons across different rule sets and eras.',
     highlights: [
       'Normalization logic applied at fact table level, preserving originals',
       'Fangio leads by average: 15.78 normalized pts/race',
@@ -145,7 +145,7 @@ export const projects = [
     type: 'Data Engineering + Visualization',
     tools: ['Python', 'SQL', 'Power BI', 'Pandas', 'Seaborn'],
     summary:
-      'End-to-end analysis of 541k+ F1 race records: Python data cleaning, SQL analytical queries, EDA with visualizations, and a Power BI dashboard with driver and nationality filters.',
+      'End-to-end analysis of 541k+ F1 race records: Python data cleaning, SQL analytical queries, EDA with visualizations, and a Power BI dashboard.',
     highlights: [
       '541k+ rows cleaned and normalized in Pandas',
       'SQL queries for top drivers, championships, career lengths',

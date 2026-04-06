@@ -4,7 +4,7 @@
 
 A single-page portfolio website. One long scrollable page, divided into sections. No separate pages, no routing, no login — just a clean, fast static site that loads instantly and works on any device.
 
-The site will present you as an Analytics Engineer, not a generic analyst. Every section should reinforce that positioning.
+The site presents Joaquín as an Analytics Engineer, not a generic analyst. Every section reinforces that positioning.
 
 ---
 
@@ -12,19 +12,20 @@ The site will present you as an Analytics Engineer, not a generic analyst. Every
 
 ### Phase 1 — Foundation (DONE)
 Git repo, Vite + React + Tailwind setup, all content files written, pushed to GitHub.
-No visual output yet — this is scaffolding only.
 
 ### Phase 2 — Layout + first POC (DONE)
 Full page layout built, all 9 projects, all sections with real content. Reviewed and approved.
 
-### Phase 3 — Visual design ← WE ARE HERE
-Apply the full dark theme, green color palette, spacing, typography, and component styling.
-Add one screenshot image per project card where a good visual exists.
-After this phase the site looks like the real thing.
+### Phase 3 — Visual design (DONE)
+Full dark theme, green palette, spacing, typography, component styling applied.
+Project hierarchy, card interactions, navbar active states, smooth scroll — all done.
+No project images — skipped by decision.
 
-### Phase 4 — Polish + interactions
-Hover states, scroll animations, mobile layout, performance check.
-Minor UX adjustments based on Phase 2 feedback.
+### Phase 4 — Polish + interactions ← WE ARE HERE
+- Scroll animations (fade-in on section enter)
+- Mobile layout review and fixes
+- Performance check
+- Minor UX adjustments
 
 ### Phase 5 — Deploy
 Push to Vercel or Netlify. Custom domain optional.
@@ -33,76 +34,96 @@ Push to Vercel or Netlify. Custom domain optional.
 
 ## Site sections (in order)
 
-| # | Section | What it contains |
-|---|---------|-----------------|
-| 1 | **Hero** | Your name, title ("Analytics Engineer"), one-line tagline, two buttons: View Projects + Download CV |
-| 2 | **About** | Short bio (3–4 sentences), your background, what you actually do |
-| 3 | **Projects** | Cards for each project — click to expand and see full detail |
-| 4 | **Skills** | Grouped by category: BI, SQL, Python, Data Engineering, Tools |
-| 5 | **Contact** | LinkedIn, GitHub, Kaggle, Email |
+| # | Section | Notes |
+|---|---------|-------|
+| 1 | **Hero** | Name, title, tagline, photo, CTA buttons, social links |
+| 2 | **About** | Bio + "How I think" principles merged into one section |
+| 3 | **Projects** | Two tiers: featured (2-col full cards) + secondary (compact list) |
+| 4 | **Skills** | Grouped by category, ordered by Analytics Engineer priority |
+| 5 | **Contact** | LinkedIn, GitHub, Kaggle, Email cards |
 
 ---
 
-## Project order
+## Project hierarchy
 
-Most impactful and technical projects first. Personal or academic ones last.
+### Featured (4 projects) — full cards, 2-column grid, click to expand
+| Project | Type |
+|---------|------|
+| Fabric NPS Rolling Pipeline | Data Engineering |
+| CX Interview Ingestion Pipeline | Data Engineering |
+| CX Data Analyst Challenge | End-to-End Analytics |
+| Sales vs Targets Dashboard | Power BI — ETL + Dashboard |
 
-| Priority | Project | Why this position |
-|----------|---------|-------------------|
-| 1 | **Fabric NPS Rolling Pipeline** | Most complete engineering project. Production pipeline, OAuth2, Graph API, ISO logic, idempotency. |
-| 2 | **CX Interview Ingestion Pipeline** (Spark + Fabric) | Production-grade Lakehouse ETL. Directly targets Analytics Engineer roles. |
-| 3 | **CX Data Analyst Challenge** | End-to-end: modeling + automation + BI. Shows breadth in 48 hours. |
-| 4 | **Sales vs Targets Dashboard** | Strong data modeling (dual fact tables), ETL, real business problem. |
-| 5 | **Sales Analysis Dashboard** | Advanced DAX, custom fiscal calendar, replaced a real Excel process. |
-| 6 | **Website Performance Dashboard** | Good design, eliminated manual reporting, shows stakeholder-facing work. |
-| 7 | **E-Commerce Sales Analysis** | Clean Python EDA with real insights. Accessible to non-technical recruiters. |
-| 8 | **F1 Historical Performance** (Power BI) | Personal project. Interesting normalization angle, lower business relevance. |
-| 9 | **F1 Data Analysis** (Python + SQL) | Academic origin. Oldest project.
-
----
-
-## Open decisions (your call)
-
-- **LinkedIn URL:** Your profile URL has a special character (í). Worth checking it resolves correctly.
-- **Tagline in Hero:** I'll draft a few options for you to choose from when we get there.
+### Secondary (5 projects) — compact horizontal list, click to expand one-liner
+| Project | Type |
+|---------|------|
+| Sales Analysis Dashboard | Power BI — Commercial Analytics |
+| Website Performance Dashboard | Power BI — Marketing Analytics |
+| E-Commerce Sales Analysis | Exploratory Data Analysis |
+| F1 Historical Performance Dashboard | Power BI — Personal Project |
+| F1 Data Analysis | Data Engineering + Visualization |
 
 ---
 
 ## Locked decisions
 
-- **All 9 projects stay** — no cuts (includes fabric-nps-rolling-pipeline added from GitHub)
-- **Project cards** — minimal: title, type badge, 2-line summary, tool tags, expandable details, GitHub link. No in-page modal or detail page — GitHub is the detail view.
-- **One image per project card** — a single screenshot where one exists (dashboards especially). Pipeline/engineering projects with no visual output: skip the image. Images sourced from `notion_portfolio/`, moved to `src/assets/projects/` before Phase 3.
-- **CV link** — already updated in `content/about.md`
+- **No project images** — skipped. Image field exists in data but all set to null.
+- **9 projects total** — no cuts.
+- **Card interaction** — click anywhere on card to expand/collapse. Only one open at a time.
+- **Crack animation** — detail panel expands from center (scaleY + max-height).
+- **Detail panel** — green background (#2F6B4F), gray text, mint arrows.
+- **Navbar** — active section highlight in green. "Joaquín Ferrer" scrolls to hero.
+- **Smooth scroll** — custom RAF easing (700ms ease-in-out).
+- **CV link** — https://drive.google.com/file/d/1iH_FYZtkNhHINkNI65pICpwkOV25cLqi/view
 - **Contact section** — links only (LinkedIn, GitHub, Kaggle, Email). No form.
+- **No light mode.**
+
+---
+
+## Key URLs
+
+- **Kaggle:** https://www.kaggle.com/joaqunferrer
+- **GitHub:** https://github.com/joacoferrer00
+- **LinkedIn:** https://linkedin.com/in/joaquínferrer
+- **CV:** https://drive.google.com/file/d/1iH_FYZtkNhHINkNI65pICpwkOV25cLqi/view
+
+---
+
+## Design tokens
+
+- Background: `#0f1117`
+- Surface: `#1a1d27`
+- Surface 2: `#222533`
+- Border: `#2a2d3a`
+- Green primary: `#3A7A5A`
+- Green dark: `#2F6B4F`
+- Green darker: `#2A5E45`
+- Text: `#e2e8f0`
+- Text muted: `#94a3b8`
+- Text faint: `#64748b`
 
 ---
 
 ## File structure
 
 ```
-my_portfolio/
-├── src/
-│   ├── components/     ← small reusable pieces (buttons, cards, badges)
-│   ├── sections/       ← full sections (Hero.jsx, About.jsx, Projects.jsx...)
-│   └── assets/         ← images, icons
-├── content/
-│   ├── about.md
-│   ├── skills.md
-│   └── projects/
-│       └── *.md        ← one file per project (8 total)
-├── CLAUDE.md           ← context for Claude (do not delete)
-├── PLANNING.md         ← this file
-└── README.md
+src/
+  components/
+    Navbar.jsx       ← fixed top nav, active section tracking, smooth scroll
+    ProjectCard.jsx  ← full card + minimal card (minimal prop)
+  sections/
+    Hero.jsx         ← name, tagline, photo (cv.png), CTA buttons
+    About.jsx        ← bio + "How I think" principles
+    Projects.jsx     ← two-tier project layout
+    Skills.jsx       ← skill groups from data/skills.js
+    Contact.jsx      ← link cards
+  data/
+    projects.js      ← all 9 projects with highlights, tools, image (null)
+    skills.js        ← skill groups ordered: Data Eng → SQL → Python → BI → Tools
+  assets/
+    cv.png           ← profile photo used in Hero
+content/
+  about.md           ← source of truth for bio content
+  skills.md          ← source of truth for skills content
+  projects/*.md      ← one file per project
 ```
-
----
-
-## Design decisions (already locked in)
-
-- Dark theme only — no light mode
-- Green palette: `#3A7A5A` (primary), `#2F6B4F` (dark), `#2A5E45` (darker)
-- Background: near-black (`#0f1117`)
-- Animations: subtle only — hover states, smooth scrolling, maybe a fade-in on scroll
-- Font: system font or one clean sans-serif (no decorative fonts)
-- No backend, no database, no CMS

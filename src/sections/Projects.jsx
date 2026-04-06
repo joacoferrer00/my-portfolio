@@ -3,6 +3,8 @@ import ProjectCard from '../components/ProjectCard'
 import { projects } from '../data/projects'
 
 export default function Projects() {
+  const featured = projects.filter((p) => p.featured)
+  const secondary = projects.filter((p) => !p.featured)
   const [openId, setOpenId] = useState(null)
 
   function handleToggle(id) {
@@ -22,13 +24,28 @@ export default function Projects() {
           From production data pipelines to business dashboards — each project built to solve a real problem.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map((project) => (
+        {/* Featured — 2-column, full cards */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          {featured.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
               expanded={openId === project.id}
               onToggle={() => handleToggle(project.id)}
+            />
+          ))}
+        </div>
+
+        {/* Secondary — compact list */}
+        <p className="text-xs text-[#64748b] uppercase tracking-widest mb-5">More projects</p>
+        <div className="flex flex-col gap-3">
+          {secondary.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              expanded={openId === project.id}
+              onToggle={() => handleToggle(project.id)}
+              minimal
             />
           ))}
         </div>
