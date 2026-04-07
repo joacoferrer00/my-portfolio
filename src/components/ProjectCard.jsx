@@ -19,11 +19,11 @@ export default function ProjectCard({ project, expanded, onToggle, minimal = fal
         className="cursor-pointer bg-[#1a1d27] border-2 border-[#2a2d3a] rounded-xl overflow-hidden hover:border-[#3A7A5A] hover:scale-[1.01] transition-all duration-300"
       >
         <div className="flex items-center justify-between gap-4 px-5 py-3.5">
-          <div className="flex items-center gap-3 min-w-0">
-            <span className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded border ${typeClass}`}>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 min-w-0 flex-1">
+            <span className={`self-start shrink-0 text-xs font-medium px-2 py-0.5 rounded border ${typeClass}`}>
               {project.type}
             </span>
-            <h3 className="text-[#e2e8f0] font-medium text-sm truncate">{project.title}</h3>
+            <h3 className="text-[#e2e8f0] font-medium text-sm">{project.title}</h3>
           </div>
           <a
             href={project.repo}
