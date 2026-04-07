@@ -27,8 +27,9 @@ No project images — skipped by decision.
 - Performance: profile photo compressed 2.2 MB → 581 KB
 - UX: smooth scroll shared utility, View Projects button fixed, Email card copies to clipboard
 
-### Phase 5 — Deploy ← WE ARE HERE
-Push to Vercel or Netlify. Custom domain optional.
+### Phase 5 — Deploy (DONE)
+Deployed to Vercel. Live at https://joaquin-ferrer-portfolio.vercel.app
+Custom domain optional.
 
 ---
 

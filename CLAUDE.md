@@ -16,7 +16,8 @@ Personal portfolio website for Joaquín Ferrer. Static site, no backend. Single 
 - **Deployment target:** Vercel or Netlify (not yet deployed)
 
 ## Current State
-Phase 4 (polish + interactions) is complete. Next is Phase 5: deploy to Vercel or Netlify. See PLANNING.md for full detail.
+All phases complete. Site is live at https://joaquin-ferrer-portfolio.vercel.app
+Deployed on Vercel — auto-deploys on every push to master.
 
 ## Visual Rules
 - **Theme:** Dark background always. No light mode. Ever.
