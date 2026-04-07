@@ -1,6 +1,6 @@
-# Joaquín Ferrer — Data Analyst Portfolio
+# Joaquín Ferrer — Analytics Engineer Portfolio
 
-Personal portfolio website showcasing data analysis projects, skills, and background.
+Personal portfolio website showcasing analytics engineering projects, skills, and background. Live at [joaquin-ferrer-portfolio.vercel.app](https://joaquin-ferrer-portfolio.vercel.app).
 
 ## Tech Stack
 
@@ -22,7 +22,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 npm run build
 ```
 
-Output goes to `dist/`. Ready to deploy on Vercel or Netlify as a static site.
+Output goes to `dist/`. Deployed on Vercel — auto-deploys on every push to `master`.
 
 ## Content
 
