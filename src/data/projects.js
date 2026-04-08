@@ -71,6 +71,18 @@ export const projects = [
     featured: true,
   },
   {
+    id: 'cs50-ai-python',
+    title: 'CS50 AI with Python',
+    date: 'Apr 2026',
+    type: 'AI & Machine Learning',
+    tools: ['Python', 'BFS/DFS', 'Minimax', 'Bayesian Networks', 'CSP', 'Markov Chains'],
+    summary: "Harvard's CS50 AI coursework — 12 projects spanning the full AI stack: search algorithms, knowledge representation, probabilistic inference, supervised learning, reinforcement learning, neural networks (computer vision), and natural language processing (transformers).",
+    highlights: [],
+    repo: 'https://github.com/joacoferrer00/cs50-ai-python',
+    image: null,
+    featured: false,
+  },
+  {
     id: 'sales-analysis-dashboard',
     title: 'Sales Analysis Dashboard',
     date: 'Jul 2025',

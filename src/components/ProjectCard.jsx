@@ -6,6 +6,7 @@ const typeColors = {
   'Power BI — Marketing Analytics': 'bg-[#1e2433] text-[#6b8cda] border-[#3a4a7a]',
   'Power BI — Personal Project': 'bg-[#222533] text-[#94a3b8] border-[#2a2d3a]',
   'Exploratory Data Analysis': 'bg-[#2a1e33] text-[#a78bda] border-[#4a3a7a]',
+  'AI & Machine Learning': 'bg-[#221a0e] text-[#b8702a] border-[#5a3a10]',
   'Data Engineering + Visualization': 'bg-[#1a2e24] text-[#3A7A5A] border-[#2F6B4F]',
 }
 
