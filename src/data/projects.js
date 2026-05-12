@@ -1,5 +1,25 @@
 export const projects = [
   {
+    id: 'review-insights',
+    title: 'Review Insights',
+    date: 'May 2026',
+    type: 'AI-Powered Data Product',
+    tools: ['Python', 'Google Gemini', 'Streamlit', 'Plotly', 'Pandas', 'Pydantic', 'Jinja2', 'Playwright'],
+    summary:
+      'Productized pipeline that converts raw Google Maps reviews into executive-ready dashboards and PDF reports. LLM classification enriches every review with topic, sentiment, and urgency — incremental processing keeps API costs low as the dataset grows.',
+    highlights: [
+      'Five-stage pipeline: ingestion → cleaning → LLM classification → aggregation → dashboard/report',
+      'Incremental processing: only new reviews are classified, minimizing Gemini API calls on reruns',
+      'Google Gemini 2.5 Flash across 3 stages: topic classification, metric enrichment, and executive report generation',
+      'Executive PDF reports (5–8 pages) generated via Jinja2 + Playwright — client-ready without manual formatting',
+      'Multi-client YAML config: deploy to a new business without modifying code',
+    ],
+    repo: 'https://github.com/joacoferrer00/review-insights',
+    demo: 'https://review-insights-audit.streamlit.app?client=wegmans',
+    image: null,
+    featured: true,
+  },
+  {
     id: 'fabric-nps-rolling-pipeline',
     title: 'Fabric NPS Rolling Pipeline',
     date: 'Mar 2026',
@@ -68,7 +88,7 @@ export const projects = [
     ],
     repo: 'https://github.com/joacoferrer00/powerbi_sales_vs_targets',
     image: null,
-    featured: true,
+    featured: false,
   },
   {
     id: 'cs50-ai-python',

@@ -1,12 +1,13 @@
 const typeColors = {
   'Data Engineering': 'bg-[#1a2e24] text-[#3A7A5A] border-[#2F6B4F]',
-  'End-to-End Analytics': 'bg-[#1a2e24] text-[#3A7A5A] border-[#2F6B4F]',
+  'End-to-End Analytics': 'bg-[#0f1e2e] text-[#7eb8d4] border-[#2a5a7a]',
   'Power BI — ETL + Dashboard': 'bg-[#1e2433] text-[#6b8cda] border-[#3a4a7a]',
   'Power BI — Commercial Analytics': 'bg-[#1e2433] text-[#6b8cda] border-[#3a4a7a]',
   'Power BI — Marketing Analytics': 'bg-[#1e2433] text-[#6b8cda] border-[#3a4a7a]',
-  'Power BI — Personal Project': 'bg-[#222533] text-[#94a3b8] border-[#2a2d3a]',
+  'Power BI — Personal Project': 'bg-[#1e2433] text-[#6b8cda] border-[#3a4a7a]',
   'Exploratory Data Analysis': 'bg-[#2a1e33] text-[#a78bda] border-[#4a3a7a]',
   'AI & Machine Learning': 'bg-[#221a0e] text-[#b8702a] border-[#5a3a10]',
+  'AI-Powered Data Product': 'bg-[#221a0e] text-[#b8702a] border-[#5a3a10]',
   'Data Engineering + Visualization': 'bg-[#1a2e24] text-[#3A7A5A] border-[#2F6B4F]',
 }
 
@@ -127,15 +128,28 @@ export default function ProjectCard({ project, expanded, onToggle, minimal = fal
           ))}
         </div>
 
-        <a
-          href={project.repo}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="text-base text-[#e2e8f0] hover:text-[#3A7A5A] active:text-[#2F6B4F] transition-colors duration-200"
-        >
-          GitHub →
-        </a>
+        <div className="flex items-center gap-5">
+          <a
+            href={project.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="text-base text-[#e2e8f0] hover:text-[#3A7A5A] active:text-[#2F6B4F] transition-colors duration-200"
+          >
+            GitHub →
+          </a>
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-base text-[#e2e8f0] hover:text-[#3A7A5A] active:text-[#2F6B4F] transition-colors duration-200"
+            >
+              Live Demo →
+            </a>
+          )}
+        </div>
       </div>
     </article>
   )
