@@ -24,9 +24,10 @@ export default function About() {
               Building data systems,<br />not just dashboards.
             </h2>
             <p className="text-[#94a3b8] leading-relaxed">
-              My background is Industrial Engineering. My current work is BI consulting.
-              My direction is Analytics Engineering — building the systems behind the data,
-              not just the outputs on top of it.
+              My background is Industrial Engineering. I work as an Analytics Engineer —
+              building the systems behind the data, not just the outputs on top of it.
+              My foundation in BI consulting means I design end-to-end: from the pipeline
+              to the business decision it feeds.
             </p>
             <p className="text-[#94a3b8] leading-relaxed">
               I work end-to-end: source systems, ingestion, transformation, modeling, and delivery —
@@ -62,12 +63,12 @@ export default function About() {
                 <p className="text-[#e2e8f0] text-sm">Industrial Engineering</p>
               </div>
               <div>
-                <p className="text-xs text-[#64748b] uppercase tracking-wider mb-1">Current Role</p>
-                <p className="text-[#e2e8f0] text-sm">BI Consultant</p>
+                <p className="text-xs text-[#64748b] uppercase tracking-wider mb-1">Role</p>
+                <p className="text-[#e2e8f0] text-sm">Analytics Engineer</p>
               </div>
               <div>
-                <p className="text-xs text-[#64748b] uppercase tracking-wider mb-1">Direction</p>
-                <p className="text-[#e2e8f0] text-sm">Analytics Engineer</p>
+                <p className="text-xs text-[#64748b] uppercase tracking-wider mb-1">Focus</p>
+                <p className="text-[#e2e8f0] text-sm">Data Products & Pipeline Design</p>
               </div>
               <div>
                 <p className="text-xs text-[#64748b] uppercase tracking-wider mb-1">Stack</p>

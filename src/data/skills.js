@@ -20,12 +20,13 @@ export const skillGroups = [
     ],
   },
   {
-    category: 'Python & Automation',
+    category: 'Python, AI & Automation',
     skills: [
       { name: 'Python', level: 'Advanced', proficiency: 85 },
       { name: 'Automation & Scheduling', level: 'Advanced', proficiency: 90 },
       { name: 'Pandas', level: 'Advanced', proficiency: 85 },
       { name: 'Exploratory Data Analysis', level: 'Advanced', proficiency: 85 },
+      { name: 'LLM Integration', level: 'Intermediate', proficiency: 75 },
     ],
   },
   {
@@ -35,6 +36,7 @@ export const skillGroups = [
       { name: 'DAX', level: 'Advanced', proficiency: 90 },
       { name: 'Power Query (M)', level: 'Advanced', proficiency: 90 },
       { name: 'Dashboard Design', level: 'Advanced', proficiency: 85 },
+      { name: 'Streamlit', level: 'Intermediate', proficiency: 70 },
     ],
   },
   {

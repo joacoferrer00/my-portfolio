@@ -13,7 +13,7 @@ export default function Hero() {
             className="anim-fade-up text-[#3A7A5A] text-base font-medium tracking-widest uppercase mb-6"
             style={{ animationDelay: '0ms' }}
           >
-            Analytics Engineer & BI Consultant
+            Analytics Engineer
           </p>
 
           <h1
